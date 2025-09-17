@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import consagradaLogo from "@assets/ChatGPT Image 17 de set. de 2025, 14_23_58_1758130502097.png";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,10 +35,15 @@ export default function Navigation() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="flex items-center">
+          <div className="flex items-center gap-3 cursor-pointer" onClick={() => scrollToSection('home')}>
+            <img 
+              src={consagradaLogo} 
+              alt="Consagrada Agência Logo" 
+              className="h-10 w-10 rounded-lg object-cover"
+              data-testid="nav-logo-image"
+            />
             <h1 
-              className="text-2xl font-display font-bold gradient-text cursor-pointer"
-              onClick={() => scrollToSection('home')}
+              className="text-2xl font-display font-bold gradient-text"
               data-testid="logo"
             >
               Consagrada
