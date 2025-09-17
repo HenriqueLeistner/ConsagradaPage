@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import consagradaLogo from "@assets/449868493_279445761892037_7833504729121517072_n_1758128961447.jpg";
+import consagradaLogo from "@assets/ChatGPT Image 17 de set. de 2025, 14_23_58_1758130502097.png";
 
 export default function HeroSection() {
   const scrollToContact = () => {
@@ -63,14 +63,13 @@ export default function HeroSection() {
             </div>
           </div>
           <div className="relative animate-fade-in">
-            <div className="relative">
+            <div className="relative neon-glow-container">
               <img 
                 src={consagradaLogo} 
                 alt="Sua empresa merece ser consagrada no mercado - Consagrada Agência" 
-                className="rounded-2xl shadow-2xl w-full h-auto"
+                className="rounded-2xl shadow-2xl w-full h-auto brightness-110 contrast-125 relative z-10"
                 data-testid="hero-image"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl"></div>
             </div>
           </div>
         </div>
