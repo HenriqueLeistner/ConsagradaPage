@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(0, 0%, 6%);
+  --background: hsl(0, 0%, 0%);
   --foreground: hsl(0, 0%, 98%);
   --card: hsl(0, 0%, 8%);
   --card-foreground: hsl(0, 0%, 98%);
@@ -53,7 +53,7 @@
 }
 
 .dark {
-  --background: hsl(0, 0%, 6%);
+  --background: hsl(0, 0%, 0%);
   --foreground: hsl(0, 0%, 98%);
   --card: hsl(0, 0%, 8%);
   --card-foreground: hsl(0, 0%, 98%);
@@ -146,6 +146,66 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+/* Efeito Neon Melhorado para as Logos */
+.box {
+  position: relative;
+  background-color: #000000;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 2px;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #ffd700, #ffffff, #ffd700, #ffffff);
+  background-size: 400%;
+  animation: rotate 4s linear infinite;
+  z-index: 0;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: #000000;
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.box img {
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-position: 0% 50%;
+  }
 }
 
 
