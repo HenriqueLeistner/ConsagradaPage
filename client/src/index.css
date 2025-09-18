@@ -136,6 +136,16 @@
   50% { transform: translateY(-20px); }
 }
 
+@keyframes marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.6s ease-in-out;
 }
@@ -146,6 +156,39 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+.marquee-container {
+  position: relative;
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee 40s linear infinite;
+  animation-play-state: running;
+}
+
+.marquee-track-reverse {
+  width: max-content;
+  animation: marquee-reverse 35s linear infinite;
+  animation-play-state: running;
+}
+
+.marquee-container:hover .marquee-track,
+.marquee-container:focus-within .marquee-track,
+.marquee-container:hover .marquee-track-reverse,
+.marquee-container:focus-within .marquee-track-reverse {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .marquee-track-reverse {
+    animation-duration: 120s;
+  }
+  .marquee-container {
+    overflow-x: hidden;
+  }
 }
 
 /* Efeito Neon Melhorado para as Logos */
